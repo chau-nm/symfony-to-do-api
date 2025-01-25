@@ -1,0 +1,13 @@
+Product:
+  type: object
+  config:
+    fields:
+      id:
+        type: "ID!"
+        description: "The unique identifier of the product"
+      name:
+        type: "String!"
+        description: "The name of the product"
+      price:
+        type: "Float!"
+        description: "The price of the product"
