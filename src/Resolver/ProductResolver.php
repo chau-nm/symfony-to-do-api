@@ -3,24 +3,20 @@
 namespace App\Resolver;
 
 use App\Entity\Product;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 class ProductResolver
 {
-    private EntityManagerInterface $entityManager;
+    private ProductRepository $productRepository;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(ProductRepository $productRepository)
     {
-        $this->entityManager = $entityManager;
-    }
-
-    public function __invoke($id): ?Product
-    {
-        return $this->entityManager->getRepository(Product::class)->find($id);
+        $this->productRepository = $productRepository;
     }
 
     public function getAllProducts(): array
     {
-        return $this->entityManager->getRepository(Product::class)->findAll();
+        return $this->productRepository->findAll();
     }
 }

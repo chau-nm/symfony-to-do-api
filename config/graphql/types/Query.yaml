@@ -2,14 +2,6 @@ Query:
   type: object
   config:
     fields:
-      product:
-        type: "Product"
-        args:
-          id:
-            type: "ID!"
-            description: "The ID of the product"
-        resolve: "@=resolver('App\\GraphQL\\Resolver\\ProductResolver', [args['id']])"
-
       allProducts:
-        type: "[Product]!"
-        resolve: "@=resolver('App\\GraphQL\\Resolver\\ProductResolver::getAllProducts')"
+        type: "[Product]"
+        resolve: ["App\\Resolver\\ProductResolver", "getAllProducts"]
