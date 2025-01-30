@@ -15,3 +15,14 @@ Query:
           name:
             type: String
         resolve: '@=query("App\\Resolver\\Greetings", info, args["name"])'
+
+      product_get_all:
+        type: '[Product!]!'
+        resolve: '@=query("App\\Resolver\\ProductQuery::getAll")'
+
+      product_get_by_id:
+        type: Product
+        args:
+          product_id:
+            type: Int
+        resolve: '@=query("App\\Resolver\\ProductQuery::getById", args["product_id"])'

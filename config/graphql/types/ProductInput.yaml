@@ -1,0 +1,8 @@
+ProductInput:
+  type: input-object
+  config:
+    fields:
+      name:
+        type: String!
+      price:
+        type: Float!

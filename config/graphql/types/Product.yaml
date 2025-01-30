@@ -1,0 +1,11 @@
+Product:
+  type: object
+  config:
+    description: "The GraphQL Product Entity"
+    fields:
+      id:
+        type: ID!
+      name:
+        type: String!
+      price:
+        type: Float!
