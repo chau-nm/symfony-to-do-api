@@ -1,7 +1,0 @@
-Query:
-  type: object
-  config:
-    fields:
-      allProducts:
-        type: "[Product]"
-        resolve: ["App\\Resolver\\ProductResolver", "getAllProducts"]
