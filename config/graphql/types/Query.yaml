@@ -1,0 +1,17 @@
+Query:
+  type: object
+  config:
+    description: "The GraphQL Query Interface"
+    fields:
+      hello:
+        type: String
+        args:
+          name:
+            type: String
+        resolve: '@=query("App\\Resolver\\Greetings", info, args["name"])'
+      goodbye:
+        type: String
+        args:
+          name:
+            type: String
+        resolve: '@=query("App\\Resolver\\Greetings", info, args["name"])'
