@@ -71,12 +71,12 @@ class ProductService
      *
      * @param int $id
      * @param array $newProduct
-     * @return Product
+     * @return Product|null
      * @throws Exception
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function update(int $id, array $newProduct): Product
+    public function update(int $id, array $newProduct): Product|null
     {
         try {
             $this->entityManager->getConnection()->beginTransaction();
@@ -90,7 +90,7 @@ class ProductService
             return $product;
         } catch (Exception $e) {
             $this->entityManager->getConnection()->rollBack();
-            throw $e;
+            return null;
         }
     }
 
